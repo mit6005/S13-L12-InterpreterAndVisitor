@@ -41,7 +41,7 @@ public class Var implements Formula {
     // onVar with "this", the declared type of "this" is
     // Var.  So the approach preserves static type checking.
     public <R> R accept(Visitor<R> v) {
-        return v.onVar(this);
+        return v.on(this);
     }
 }
 
@@ -57,7 +57,7 @@ public class Not implements Formula {
     }
     
     public <R> R accept(Visitor<R> v) {
-        return v.onNot(this);
+        return v.on(this);
     }
 }
 
@@ -75,7 +75,7 @@ public class And implements Formula {
     }
     
     public <R> R accept(Visitor<R> v) {
-        return v.onAnd(this);
+        return v.on(this);
     }
 }
 
@@ -93,6 +93,6 @@ public class Or implements Formula {
     }
     
     public <R> R accept(Visitor<R> v) {
-        return v.onOr(this);
+        return v.on(this);
     }
 }
